@@ -1,0 +1,58 @@
+void sortareNumararePtRadix(int exp){
+//adaptarii sortarii de tip count pentru radix
+
+    int *v,max=0,i=0,*copie,nr=0;
+    p=prim;
+
+    while(p!=0){
+nr++;       //se numara elementele
+            if(max<p->cheie)
+            max=p->cheie;//se gaseste maximul
+
+    p=p->urm;
+    }
+
+
+copie=(int*)calloc(nr,sizeof(int));//se copiaza lista
+   v=(int*)calloc(max+1,sizeof(int));//vectorul pentru numarare
+
+
+
+p=prim;
+i=0;
+
+   while(p!=0){
+       *(copie+i)=p->cheie;
+        i++;
+    v[(p->cheie/exp)%10]++;
+    p=p->urm;
+
+   }//se numara in fucntie de exp, daca exp=1 se ia prima cifra din capat, daca exp=10 se ia a doua din capat (p->cheie/10)%10)
+
+
+    for(i=0;i<max;i++)
+        v[i+1]=v[i+1]+v[i];//se aduna la v[i+1] v[i]
+
+    for(i=max;i>0;i--)
+        v[i]=v[i-1];// se duc elementele o pozitie in dreapta si pe v[0] se pune 0
+   v[0]=0;
+
+       for (int i=0 ; i < nr; i++) {
+
+    adresaElemenentului_N(v[(copie[i]/exp)%10])->cheie = copie[i];
+    v[(copie[i]/exp)%10]++;
+
+       }
+//se construieste vectorul, din nou in functie de exp;
+
+
+}
+void sortareRadix()
+{
+
+    int m = getMax();//maxim
+printf("maxim= %d",m);
+    for (int exp = 1; m / exp > 0; exp *= 10)//exp 1 (prima cifra) exp 10 (a doua) etc
+        sortareNumararePtRadix(exp);//sortare
+
+}

@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1596747713 source:e:\programe c\c++\c++ bjarne\main.cpp
+	<iostream>
+	"header.h"
+	<stdlib.h>
+	<time.h>
+
+1588182481 e:\programe c\c++\c++ bjarne\header.h
+	<iostream>
+	<iomanip>
+	<fstream>
+	<sstream>
+	<cmath>
+	<cstdlib>
+	<string>
+	<list>
+	<forward_list>
+	<vector>
+	<unordered_map>
+	<algorithm>
+	<array>
+	<regex>
+	<random>
+	<stdexcept>
+

@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1583607178 source:e:\programe c\c++\minecraft2d\main.cpp
+	<iostream>
+	<fstream>
+	<windows.h>
+	<conio.h>
+	<stdio.h>
+
+1583603578 source:g:\programe c\c++\minecraft2d\main.cpp
+	<iostream>
+	<fstream>
+	<windows.h>
+	<conio.h>
+	<stdio.h>
+

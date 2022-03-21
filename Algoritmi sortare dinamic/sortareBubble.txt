@@ -1,0 +1,38 @@
+void sortareBubble(){
+
+
+   int i,n=0,aux,lungime,ok=1;
+   p=prim;//se ia inceputul listei
+  while(p!=0){
+    n++;
+  p=p->urm;
+  }
+  //se afla numarul de elemente
+  printf("n=%d",n);
+
+
+  lungime=n-1;
+
+while(ok!=0)
+{
+ok=0;//variabila de tip fanion care ne arata daca s-a facut o interschimbare
+//caz in care trbuie sa revenim sa verificam daca nu cumva mai trebuie facute alte interschimbari
+p=prim;
+for(i=0;i<lungime;i++)
+            {
+                if(p->cheie>p->urm->cheie){// se verifica v[i] > v[i+1], in caz in care este adev. se interschimba
+                    aux=p->cheie;
+    p->cheie=p->urm->cheie;
+    p->urm->cheie=aux;
+    ok=1;
+                }
+
+                p=p->urm;
+            }
+            lungime--;//primele i pozitii deja sunt aranjate(mergem pe lista, nu ne interseaza i-ul propriu-zis)
+            //p->urm este cel care parcurge lista;
+}
+
+//in momentul in care ok a ramas 0 inseamna ca nu mai s a facut nici o modificare, adica lista este sortata
+
+}

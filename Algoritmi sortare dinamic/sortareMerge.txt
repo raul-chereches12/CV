@@ -1,0 +1,52 @@
+void mergeSort(int *v,int i, int sf)
+{
+    
+    //v vectorul pe care il sortam
+    if(i<sf)
+        {
+         int m=(i+sf)/2; // m - pozitia mijlocului
+         mergeSort(v, i , m); // reapelam functia pentru prima jumatate a vectorului pana ramane doar un element
+         mergeSort(v, m+1, sf);// reapelam functia pentru a doua jumatate a vectorului pana ramane doar un element
+         merge(v,i,m,sf); // functie sortam cele 2 bucati, intr-o bucata mai mare(prima jumatate) cu a doua jumatate
+    }
+
+}
+
+int* aloc_dim(int n){
+    // alocarea dinamica
+  int *v=(int*)calloc(n+1,sizeof(int));
+  if(v==NULL){
+    printf("Mem. insuf");
+    exit(1);
+  }
+  return v;
+
+}
+
+void merge(int *v, int i, int m , int sfarsit){
+    // v - vectorul ce care il sortam
+    // i - pozitia de inceput
+  
+  
+    int j = i;  // contor pentru prima jumatate a listei
+    int k = m+1; // contor pentru a doua jumatate a listei
+    int p = 0; // contor pentru vector sortat
+    int *sortat=aloc_dim(sfarsit-i); /// declaram un vector ce are dimensiunea vectorului de sortat
+    
+    while( (j<=m) && (k<=sfarsit) ){
+        if(v[j]<v[k])sortat[p++]=v[j++]; ///verificam care este cel mai mic termen si il punem in vectorul sortat
+        else sortat[p++]=v[k++];
+    }
+    
+    while(j<=m)sortat[p++]=v[j++]; 
+    // in cazul in care erau mai multe valori mici in a doua jumatate 
+    
+    while(k<=sfarsit)sortat[p++]=v[k++];
+    // in cazul in care erau mai multe valori mici in a prima jumatate
+    
+    p=0; // reinitializam valoarea 0 pentru vectorul sortat
+    
+    for(j=i;j<=sfarsit;j++)v[j]=sortat[p++]; /// punem valorile sortate in vectorul principal
+    
+    free(sortat); /// eliberam memoria alocata vectorului sortat
+}

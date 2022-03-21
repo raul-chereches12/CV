@@ -1,0 +1,14 @@
+A castigat Player-ul cu 21, iar Calculatorul a pierdut cu 20 carti castigator: 
+6 rosu inima 
+6 negru pica 
+9 negru pica 
+
+
+player:
+6 rosu inima 
+6 negru pica 
+9 negru pica 
+
+calculator:
+9 rosu inima 
+11 trefla as 

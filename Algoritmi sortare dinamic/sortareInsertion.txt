@@ -1,0 +1,36 @@
+void sortareInsertion(){
+TIP_NOD *q;
+    int key;
+
+
+    p=prim;//prima pozitie in lista
+
+   while(p!=0){
+
+        key=p->cheie;//cheia pe care o cautam sa o sortam(de la p(prim) la 0) adica toata lista
+
+
+   q=p->ant;//q cauta inaintea lui key pana la inceput(q!=0 inceput)
+   //se cauta pozitia corecta(momentul in care key>q->cheie inseamna ca s-a gasit pozitia)se opreste interschimbarea
+
+        while (q != 0 && q->cheie>key)
+        {
+            q->urm->cheie=q->cheie;
+            q->cheie=0;
+            q=q->ant;
+        }
+
+
+if(q==0){
+    q=prim;
+    q->cheie=key;
+}//daca q este = 0 nu se face nici o interchimbare
+
+else
+q->urm->cheie=key;
+//daca q nu este egal cu 0, pe pozitia corecta se introduce cheia(key)
+      p=p->urm;
+   }
+
+
+}

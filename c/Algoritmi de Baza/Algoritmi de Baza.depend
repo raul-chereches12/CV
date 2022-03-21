@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1578526445 source:e:\programe c\c++\algoritmi de baza\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+

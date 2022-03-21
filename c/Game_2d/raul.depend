@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1571527020 source:e:\programe c\c++\raul\main.cpp
+	<iostream>
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	<windows.h>
+	<time.h>
+	<fstream>
+

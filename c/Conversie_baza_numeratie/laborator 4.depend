@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1571909598 source:e:\programe c\c++\laborator 4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+

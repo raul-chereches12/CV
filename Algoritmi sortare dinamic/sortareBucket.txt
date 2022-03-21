@@ -1,0 +1,75 @@
+void sortareBucket(){
+// pentru numere intre 0.0 si 1.0
+int i;
+p=prim;
+
+
+
+
+   TIP_NOD *v=(TIP_NOD*)calloc(10,sizeof(TIP_NOD));//vector de pointer de TIP_NOD
+
+
+
+   p=prim;//se vine la primul element
+//se introduc elementele in bucketul corespunzator (pt 0.78 se introdcute in bucketul cu nr 7 (0.78*10))
+while(p!=0){
+int bi=p->cheie*10; //se face si trunchierea;0.78*10=(int)7.8=7
+
+    inserareInFata(v+bi,p->cheie); 
+
+    p=p->urm;
+
+}
+TIP_NOD *low,*high;
+
+for(i=0;i<10;i++){// se merge pe cele 10 bucketuri 0-9
+        low=v+i;//se ia inceputul
+p=low;
+        while(p->urm!=0){
+            p=p->urm;//p ajunge la ultimul element
+        }
+            high=p;//se ia sfarsitul
+
+    quickSort(low,high);// se sorteaza de la low la high (am facut cu quick Sort deoarece este implementat cu parametrii low,high si timpul=O(NlogN))
+
+
+}
+//afisare
+for(i=0;i<10;i++){
+    p=v+i; //v[0] v[1].....v[9] pointerii
+
+    while(p!=0){//pt i=0 ar fi v[0]+0 v[1]+1
+        printf("%d ",p->cheie);
+        p=p->urm;
+    }
+
+
+
+}
+
+}
+
+void inserareInFata(TIP_NOD *adresa,float value){
+
+//se insereaza in fata
+p=(TIP_NOD*)malloc(sizeof(TIP_NOD));
+p->cheie=value;
+if(adresa==0){
+
+    adresa=p;
+    p->urm=0;
+    p->ant=0;
+
+}
+else{
+
+     p->urm=adresa->urm;
+     adresa->urm=p;
+     p->ant=adresa;
+     p->urm->ant=p;
+
+
+}
+
+
+}

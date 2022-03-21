@@ -1,0 +1,71 @@
+TIP_NOD *partition(TIP_NOD *low,TIP_NOD *high){
+
+int ok=1;
+TIP_NOD *pivot=high,*i,*j;
+
+i=low;
+j=low;
+
+//se iau i
+
+while(j!=high){
+
+    if(j->cheie<pivot->cheie){
+
+        i=i->urm;//cand se gaseste un element mai mic decat pivotul i se incrementeaza
+
+        if(ok==1){
+            ok=0;
+        i=i->ant;
+        }
+//am luat ok==1 pentru a nu se realiza primul pas intrucat i=i->ant (i ar fi 0)astfel dupa primul pas ok =0, se realizeaza normal
+//in lista daca ajungeam la 0 nu mai era cale de intoarcere
+        interschimbare(i,j);//se interschimba i cu j, j fiind elemntul mai mic ca pivotul
+
+    }
+
+    j=j->urm;
+}
+
+j=j->ant;
+
+
+i=i->urm;
+interschimbare(i,high);// se aseaza pivotul in locul potrivit(inaintea lui elemente sunt < ca acesta)
+return i;
+}
+void quickSort(TIP_NOD *low, TIP_NOD *high)
+{
+TIP_NOD *pi;
+
+if (low < high)
+    {
+
+        pi = partition(low,high);//se partitoneaza ( daca am lua pivotul in mijloc atunci inaintea lui ar fi
+//elemntele mai mici si dupa el elementele mai mari)  dupa partitionare.
+
+       quickSort(low,pi->urm);
+       quickSort(pi->ant,high->urm);
+    }
+
+
+
+}
+
+int getMax(){
+    //pentru aflarea valorii maxime
+    p=prim;
+    int maxim;
+
+    maxim=p->cheie;
+    p=p->urm;
+
+while(p!=0){
+
+    if(maxim<p->cheie)
+        maxim=p->cheie;
+
+    p=p->urm;
+}
+return maxim;
+}

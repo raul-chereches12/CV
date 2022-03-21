@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1574931641 source:d:\student\2019\30114\siruri de caractere\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1571303992 source:e:\programe c\c\saptmana 3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

@@ -1,0 +1,12 @@
+A castigat Calculatorul cu 21, iar mana 1 a pierdut cu 20 carti castigator: 
+10 trefla popa 
+11 caro as 
+
+
+player:
+10 trefla valet 
+10 negru trefla 
+
+calculator:
+10 trefla popa 
+11 caro as 

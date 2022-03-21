@@ -1,0 +1,35 @@
+void sortareSelection(){
+
+TIP_NOD *inceput,*adresa;
+int minim,aux;
+
+inceput=prim;//se seteaza inceputul
+
+
+
+while(inceput!=ultim){//se seteaza domeniul de sortare inceput-sfarsit
+
+        p=inceput;//p este cel care parcurge lista
+       minim=p->cheie;//se ia minimul din p
+       p=inceput->urm;//se parcurge
+
+        while(p!=0){//p merge de la inceput la sfarsit
+
+
+            if(minim>p->cheie){
+                minim=p->cheie;
+                adresa=p;
+            }//se afla minimul pana la sfarsit
+
+            p=p->urm;
+        }
+
+    aux=adresa->cheie;
+    adresa->cheie=inceput->cheie;
+    inceput->cheie=aux;
+//se interschimba minimul gasit(poate ramane acelasi, caz in care este sortat deja) cu pozitia de inceput.
+    inceput=inceput->urm;
+}
+//se repeta pana cand se ajunge la penultimul element
+
+}

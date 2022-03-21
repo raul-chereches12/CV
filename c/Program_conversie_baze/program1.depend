@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1570700066 source:d:\student\2019\30114\raul chereches\program1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1572962750 source:e:\programe c\c\saptamna 5\program1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1578156244 source:e:\programe c\c\saptamna 5\program conv baze\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
