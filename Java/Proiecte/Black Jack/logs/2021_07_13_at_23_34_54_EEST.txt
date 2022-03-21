@@ -1,0 +1,14 @@
+A castigat Player-ul cu 19 , iar Calculatorul cu 28 carti castigator: 
+9 rosu inima 
+10 negru pica 
+
+
+player:
+9 rosu inima 
+10 negru pica 
+
+calculator:
+6 negru pica 
+2 rosu inima 
+10 inima dama 
+10 caro popa 
